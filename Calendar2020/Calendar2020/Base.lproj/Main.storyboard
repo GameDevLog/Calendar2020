@@ -725,7 +725,7 @@
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="AIDevLog" id="TME-hF-s1n"/>
                             </imageView>
-                            <imageView translatesAutoresizingMaskIntoConstraints="NO" id="jnx-U4-auM">
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" id="jnx-U4-auM" customClass="CalImageView" customModule="Calendar2020" customModuleProvider="target">
                                 <rect key="frame" x="10" y="10" width="595" height="842"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jnx-U4-auM" secondAttribute="height" multiplier="595:842" id="23T-NL-OQW"/>
@@ -766,6 +766,9 @@
                             <constraint firstItem="l01-Uh-gcA" firstAttribute="centerX" secondItem="jnx-U4-auM" secondAttribute="centerX" id="tLO-7X-Dhd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="calImageView" destination="jnx-U4-auM" id="Ccp-zP-oZY"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

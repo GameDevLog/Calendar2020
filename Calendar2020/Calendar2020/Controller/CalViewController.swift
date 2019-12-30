@@ -9,19 +9,17 @@
 import Cocoa
 
 class CalViewController: NSViewController {
+    @IBOutlet var calImageView: CalImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        calImageView.image = NSImage(named: "2020")
     }
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
-
-
 }
-
