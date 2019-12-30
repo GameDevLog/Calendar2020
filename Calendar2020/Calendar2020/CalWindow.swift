@@ -18,7 +18,7 @@ class CalWindow: NSWindow {
                 UInt8(NSWindow.CollectionBehavior.stationary.rawValue) |
                 UInt8(NSWindow.CollectionBehavior.ignoresCycle.rawValue)))
 
-        backgroundColor = NSColor.black
+        backgroundColor = NSColor(named: "Background")
         isOpaque = false
     }
 
