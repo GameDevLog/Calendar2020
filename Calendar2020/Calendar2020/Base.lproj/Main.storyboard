@@ -706,8 +706,42 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="CalViewController" customModule="Calendar2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1600" height="1200"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" id="3uc-ot-7So">
+                                <rect key="frame" x="1265" y="906" width="270" height="294"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3uc-ot-7So" secondAttribute="height" multiplier="545:594" id="GKk-dB-a8P"/>
+                                    <constraint firstAttribute="width" constant="270" id="S9R-ZC-aqk"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="Rat" id="uLt-6O-tGA"/>
+                            </imageView>
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" id="qvd-mK-ULV">
+                                <rect key="frame" x="1200" y="0.0" width="400" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="e2x-4K-XMD"/>
+                                    <constraint firstAttribute="width" secondItem="qvd-mK-ULV" secondAttribute="height" multiplier="2:1" id="zGR-9V-NX0"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="AIDevLog" id="TME-hF-s1n"/>
+                            </imageView>
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" id="jnx-U4-auM">
+                                <rect key="frame" x="10" y="10" width="834" height="1180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jnx-U4-auM" secondAttribute="height" multiplier="595:842" id="23T-NL-OQW"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="2020" id="ZeK-tY-E4L"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="jnx-U4-auM" secondAttribute="bottom" constant="10" id="BlE-wY-WYG"/>
+                            <constraint firstItem="jnx-U4-auM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="Iez-qL-1KT"/>
+                            <constraint firstItem="jnx-U4-auM" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="Pvc-6W-Sp5"/>
+                            <constraint firstItem="3uc-ot-7So" firstAttribute="centerX" secondItem="qvd-mK-ULV" secondAttribute="centerX" id="QWP-8i-hdp"/>
+                            <constraint firstItem="3uc-ot-7So" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="WXH-0d-RYD"/>
+                            <constraint firstAttribute="trailing" secondItem="qvd-mK-ULV" secondAttribute="trailing" id="Z2A-FN-LA0"/>
+                            <constraint firstAttribute="bottom" secondItem="qvd-mK-ULV" secondAttribute="bottom" id="jYP-fO-89E"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -715,4 +749,9 @@
             <point key="canvasLocation" x="75" y="655"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="2020" width="595" height="842"/>
+        <image name="AIDevLog" width="800" height="400"/>
+        <image name="Rat" width="545" height="594"/>
+    </resources>
 </document>
