@@ -3,6 +3,16 @@
     {
       "idiom" : "universal",
       "filename" : "2020.pdf"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "2020-dark.pdf",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ]
     }
   ],
   "info" : {

@@ -12,11 +12,12 @@ class CalWindow: NSWindow {
     override init(contentRect: NSRect, styleMask style: NSWindow.StyleMask, backing backingStoreType: NSWindow.BackingStoreType, defer flag: Bool) {
         super.init(contentRect: contentRect, styleMask: style, backing: backingStoreType, defer: flag)
 
-        level = NSWindow.Level(rawValue: NSWindow.Level.RawValue(CGWindowLevelForKey(CGWindowLevelKey.desktopWindow) - 1))
+        level = NSWindow.Level(rawValue: NSWindow.Level.RawValue(CGWindowLevelForKey(CGWindowLevelKey.desktopWindow) + 1))
 
-        collectionBehavior = NSWindow.CollectionBehavior(rawValue: NSWindow.CollectionBehavior.RawValue(UInt8(NSWindow.CollectionBehavior.canJoinAllSpaces.rawValue) |
-                UInt8(NSWindow.CollectionBehavior.stationary.rawValue) |
-                UInt8(NSWindow.CollectionBehavior.ignoresCycle.rawValue)))
+        collectionBehavior = NSWindow.CollectionBehavior(rawValue: NSWindow.CollectionBehavior.RawValue(
+                UInt8(NSWindow.CollectionBehavior.canJoinAllSpaces.rawValue)
+                | UInt8(NSWindow.CollectionBehavior.stationary.rawValue)
+                | UInt8(NSWindow.CollectionBehavior.ignoresCycle.rawValue)))
 
         backgroundColor = NSColor(named: "Background")
         isOpaque = false

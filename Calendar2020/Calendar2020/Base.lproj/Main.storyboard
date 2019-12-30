@@ -706,11 +706,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="CalViewController" customModule="Calendar2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="1600" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1600" height="862"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView translatesAutoresizingMaskIntoConstraints="NO" id="3uc-ot-7So">
-                                <rect key="frame" x="1265" y="906" width="270" height="294"/>
+                                <rect key="frame" x="1265" y="568" width="270" height="294"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3uc-ot-7So" secondAttribute="height" multiplier="545:594" id="GKk-dB-a8P"/>
                                     <constraint firstAttribute="width" constant="270" id="S9R-ZC-aqk"/>
@@ -726,27 +726,50 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="AIDevLog" id="TME-hF-s1n"/>
                             </imageView>
                             <imageView translatesAutoresizingMaskIntoConstraints="NO" id="jnx-U4-auM">
-                                <rect key="frame" x="10" y="10" width="834" height="1180"/>
+                                <rect key="frame" x="10" y="10" width="595" height="842"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jnx-U4-auM" secondAttribute="height" multiplier="595:842" id="23T-NL-OQW"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="2020" id="ZeK-tY-E4L"/>
                             </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l01-Uh-gcA" customClass="CalTextField" customModule="Calendar2020" customModuleProvider="target">
+                                <rect key="frame" x="136" y="40" width="344" height="28"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="https://live.bilibili.com/4311135" id="JUy-cY-RI6">
+                                    <font key="font" size="24" name="HelveticaNeue"/>
+                                    <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://live.bilibili.com/4311135"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mvg-Xh-Nf2">
+                                <rect key="frame" x="249" y="766" width="118" height="56"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="2020" id="sKq-Y1-ZVC">
+                                    <font key="font" metaFont="system" size="48"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="jnx-U4-auM" secondAttribute="bottom" constant="10" id="BlE-wY-WYG"/>
                             <constraint firstItem="jnx-U4-auM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="Iez-qL-1KT"/>
+                            <constraint firstAttribute="bottom" secondItem="l01-Uh-gcA" secondAttribute="bottom" constant="40" id="LeF-ff-XmU"/>
                             <constraint firstItem="jnx-U4-auM" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="Pvc-6W-Sp5"/>
                             <constraint firstItem="3uc-ot-7So" firstAttribute="centerX" secondItem="qvd-mK-ULV" secondAttribute="centerX" id="QWP-8i-hdp"/>
                             <constraint firstItem="3uc-ot-7So" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="WXH-0d-RYD"/>
                             <constraint firstAttribute="trailing" secondItem="qvd-mK-ULV" secondAttribute="trailing" id="Z2A-FN-LA0"/>
+                            <constraint firstItem="mvg-Xh-Nf2" firstAttribute="centerX" secondItem="jnx-U4-auM" secondAttribute="centerX" id="cuX-Ns-4gZ"/>
+                            <constraint firstItem="mvg-Xh-Nf2" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="iMp-bT-ly3"/>
                             <constraint firstAttribute="bottom" secondItem="qvd-mK-ULV" secondAttribute="bottom" id="jYP-fO-89E"/>
+                            <constraint firstItem="l01-Uh-gcA" firstAttribute="centerX" secondItem="jnx-U4-auM" secondAttribute="centerX" id="tLO-7X-Dhd"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="74" y="1164"/>
         </scene>
     </scenes>
     <resources>
