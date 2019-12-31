@@ -12,7 +12,8 @@ class CalWindow: NSWindow {
     override init(contentRect: NSRect, styleMask style: NSWindow.StyleMask, backing backingStoreType: NSWindow.BackingStoreType, defer flag: Bool) {
         super.init(contentRect: contentRect, styleMask: style, backing: backingStoreType, defer: flag)
 
-        level = NSWindow.Level(rawValue: NSWindow.Level.RawValue(CGWindowLevelForKey(CGWindowLevelKey.desktopWindow) + 1))
+        // we can click link
+        level = NSWindow.Level(rawValue: NSWindow.Level.RawValue(CGWindowLevelForKey(CGWindowLevelKey.normalWindow) - 1))
 
         collectionBehavior = NSWindow.CollectionBehavior(rawValue: NSWindow.CollectionBehavior.RawValue(
                 UInt8(NSWindow.CollectionBehavior.canJoinAllSpaces.rawValue)
@@ -21,13 +22,5 @@ class CalWindow: NSWindow {
 
         backgroundColor = NSColor(named: "Background")
         isOpaque = false
-    }
-
-    override var canBecomeMain: Bool {
-        return false
-    }
-
-    override var canBecomeKey: Bool {
-        return false
     }
 }

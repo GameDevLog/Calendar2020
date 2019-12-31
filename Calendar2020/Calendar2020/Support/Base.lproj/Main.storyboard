@@ -706,14 +706,13 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="CalViewController" customModule="Calendar2020" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="1600" height="862"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1600" height="952"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView translatesAutoresizingMaskIntoConstraints="NO" id="3uc-ot-7So">
-                                <rect key="frame" x="1265" y="568" width="270" height="294"/>
+                                <rect key="frame" x="1200" y="552" width="400" height="400"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="3uc-ot-7So" secondAttribute="height" multiplier="545:594" id="GKk-dB-a8P"/>
-                                    <constraint firstAttribute="width" constant="270" id="S9R-ZC-aqk"/>
+                                    <constraint firstAttribute="width" secondItem="3uc-ot-7So" secondAttribute="height" multiplier="1:1" id="GKk-dB-a8P"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="Rat" id="uLt-6O-tGA"/>
                             </imageView>
@@ -726,15 +725,82 @@
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="AIDevLog" id="TME-hF-s1n"/>
                             </imageView>
                             <imageView translatesAutoresizingMaskIntoConstraints="NO" id="jnx-U4-auM" customClass="CalImageView" customModule="Calendar2020" customModuleProvider="target">
-                                <rect key="frame" x="10" y="10" width="595" height="842"/>
+                                <rect key="frame" x="10" y="10" width="659" height="932"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jnx-U4-auM" secondAttribute="height" multiplier="595:842" id="23T-NL-OQW"/>
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="2020" id="ZeK-tY-E4L"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l01-Uh-gcA" customClass="CalTextField" customModule="Calendar2020" customModuleProvider="target">
-                                <rect key="frame" x="136" y="40" width="344" height="28"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="https://live.bilibili.com/4311135" id="JUy-cY-RI6">
+                                <rect key="frame" x="188" y="40" width="303" height="28"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="https://2020.iosdevlog.com" id="JUy-cY-RI6">
+                                    <font key="font" size="24" name="HelveticaNeue"/>
+                                    <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://2020.iosdevlog.com"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mvg-Xh-Nf2">
+                                <rect key="frame" x="258" y="790" width="163" height="122"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="2020" id="sKq-Y1-ZVC">
+                                    <font key="font" size="36" name="Zapfino"/>
+                                    <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <scrollView wantsLayer="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lh-2o-08K">
+                                <rect key="frame" x="709" y="40" width="491" height="750"/>
+                                <clipView key="contentView" drawsBackground="NO" id="gqo-wf-e69">
+                                    <rect key="frame" x="0.0" y="0.0" width="491" height="750"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="ZrE-TG-IUr">
+                                            <rect key="frame" x="0.0" y="0.0" width="491" height="750"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="WWj-0e-jsq">
+                                                <size key="itemSize" width="50" height="50"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="oUr-jB-dzh">
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="ntl-z0-gpX">
+                                    <rect key="frame" x="560" y="0.0" width="16" height="574"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="EqQ-Z6-gW4">
+                                <rect key="frame" x="855" y="790" width="199" height="122"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="TodoList" id="2Qc-wJ-Ijg">
+                                    <font key="font" size="36" name="Zapfino"/>
+                                    <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hZt-Mu-dBY">
+                                <rect key="frame" x="1276" y="476" width="249" height="56"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="GameName" id="feq-8K-1C9">
+                                    <font key="font" metaFont="system" size="48"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <imageView translatesAutoresizingMaskIntoConstraints="NO" id="pHc-wr-1qD">
+                                <rect key="frame" x="1200" y="256" width="400" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="zsr-eR-K9F"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="Game" id="cMO-G2-qMG"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="scd-50-Lph" customClass="CalTextField" customModule="Calendar2020" customModuleProvider="target">
+                                <rect key="frame" x="782" y="40" width="344" height="28"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="https://live.bilibili.com/4311135" id="yUJ-8L-jU6">
                                     <font key="font" size="24" name="HelveticaNeue"/>
                                     <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -743,31 +809,39 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://live.bilibili.com/4311135"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mvg-Xh-Nf2">
-                                <rect key="frame" x="249" y="766" width="118" height="56"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="2020" id="sKq-Y1-ZVC">
-                                    <font key="font" metaFont="system" size="48"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="scd-50-Lph" firstAttribute="centerX" secondItem="0Lh-2o-08K" secondAttribute="centerX" id="1EX-H1-3JB"/>
+                            <constraint firstItem="hZt-Mu-dBY" firstAttribute="centerX" secondItem="3uc-ot-7So" secondAttribute="centerX" id="2s9-hI-00C"/>
                             <constraint firstAttribute="bottom" secondItem="jnx-U4-auM" secondAttribute="bottom" constant="10" id="BlE-wY-WYG"/>
+                            <constraint firstItem="0Lh-2o-08K" firstAttribute="top" secondItem="EqQ-Z6-gW4" secondAttribute="bottom" id="GY7-dV-b9u"/>
                             <constraint firstItem="jnx-U4-auM" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="10" id="Iez-qL-1KT"/>
+                            <constraint firstItem="qvd-mK-ULV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pHc-wr-1qD" secondAttribute="bottom" constant="20" id="IvJ-r1-Dgx"/>
                             <constraint firstAttribute="bottom" secondItem="l01-Uh-gcA" secondAttribute="bottom" constant="40" id="LeF-ff-XmU"/>
                             <constraint firstItem="jnx-U4-auM" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="Pvc-6W-Sp5"/>
                             <constraint firstItem="3uc-ot-7So" firstAttribute="centerX" secondItem="qvd-mK-ULV" secondAttribute="centerX" id="QWP-8i-hdp"/>
+                            <constraint firstAttribute="bottom" secondItem="0Lh-2o-08K" secondAttribute="bottom" constant="40" id="W2m-fp-5Ku"/>
                             <constraint firstItem="3uc-ot-7So" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="WXH-0d-RYD"/>
+                            <constraint firstItem="0Lh-2o-08K" firstAttribute="leading" secondItem="jnx-U4-auM" secondAttribute="trailing" constant="40" id="YvW-T5-UmF"/>
                             <constraint firstAttribute="trailing" secondItem="qvd-mK-ULV" secondAttribute="trailing" id="Z2A-FN-LA0"/>
+                            <constraint firstItem="pHc-wr-1qD" firstAttribute="top" secondItem="hZt-Mu-dBY" secondAttribute="bottom" constant="20" id="buz-st-wHQ"/>
                             <constraint firstItem="mvg-Xh-Nf2" firstAttribute="centerX" secondItem="jnx-U4-auM" secondAttribute="centerX" id="cuX-Ns-4gZ"/>
+                            <constraint firstItem="scd-50-Lph" firstAttribute="bottom" secondItem="l01-Uh-gcA" secondAttribute="bottom" id="fdX-bF-XkC"/>
+                            <constraint firstItem="EqQ-Z6-gW4" firstAttribute="centerY" secondItem="mvg-Xh-Nf2" secondAttribute="centerY" id="fib-An-T1b"/>
                             <constraint firstItem="mvg-Xh-Nf2" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="40" id="iMp-bT-ly3"/>
                             <constraint firstAttribute="bottom" secondItem="qvd-mK-ULV" secondAttribute="bottom" id="jYP-fO-89E"/>
+                            <constraint firstItem="qvd-mK-ULV" firstAttribute="leading" secondItem="0Lh-2o-08K" secondAttribute="trailing" id="kHh-Vz-YYH"/>
+                            <constraint firstItem="pHc-wr-1qD" firstAttribute="leading" secondItem="0Lh-2o-08K" secondAttribute="trailing" id="lkd-lw-hS2"/>
+                            <constraint firstItem="EqQ-Z6-gW4" firstAttribute="centerX" secondItem="ZrE-TG-IUr" secondAttribute="centerX" id="mvA-IS-SuM"/>
+                            <constraint firstItem="3uc-ot-7So" firstAttribute="width" secondItem="qvd-mK-ULV" secondAttribute="width" id="ptM-Ka-rxY"/>
+                            <constraint firstAttribute="trailing" secondItem="pHc-wr-1qD" secondAttribute="trailing" id="qys-US-U5L"/>
                             <constraint firstItem="l01-Uh-gcA" firstAttribute="centerX" secondItem="jnx-U4-auM" secondAttribute="centerX" id="tLO-7X-Dhd"/>
+                            <constraint firstItem="hZt-Mu-dBY" firstAttribute="top" secondItem="3uc-ot-7So" secondAttribute="bottom" constant="20" id="twR-Pk-6UU"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="calImageView" destination="jnx-U4-auM" id="Ccp-zP-oZY"/>
+                        <outlet property="collectionView" destination="ZrE-TG-IUr" id="06K-e8-O3L"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -778,6 +852,7 @@
     <resources>
         <image name="2020" width="595" height="842"/>
         <image name="AIDevLog" width="800" height="400"/>
-        <image name="Rat" width="545" height="594"/>
+        <image name="Game" width="711" height="400"/>
+        <image name="Rat" width="592" height="592"/>
     </resources>
 </document>

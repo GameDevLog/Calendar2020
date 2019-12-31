@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE047A7D23BADC820009028A /* CalSectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE047A7C23BADC820009028A /* CalSectionView.xib */; };
+		DE047A7F23BADCB20009028A /* CalSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE047A7E23BADCB20009028A /* CalSectionView.swift */; };
+		DE047A8123BAE2660009028A /* CalTodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE047A8023BAE2660009028A /* CalTodoItem.swift */; };
+		DE047A8323BAE2790009028A /* CalTodoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE047A8223BAE2790009028A /* CalTodoSection.swift */; };
+		DE047A8523BAE2F70009028A /* CalTodoYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE047A8423BAE2F70009028A /* CalTodoYear.swift */; };
+		DE047A8923BAE3380009028A /* CalTodoMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE047A8823BAE3380009028A /* CalTodoMonth.swift */; };
+		DE047A8B23BAF0170009028A /* CalTodoDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE047A8A23BAF0170009028A /* CalTodoDay.swift */; };
 		DE074D1023B9E6C200F494D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE074D0F23B9E6C200F494D1 /* AppDelegate.swift */; };
 		DE074D1223B9E6C200F494D1 /* CalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE074D1123B9E6C200F494D1 /* CalViewController.swift */; };
 		DE074D1423B9E6C300F494D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE074D1323B9E6C300F494D1 /* Assets.xcassets */; };
@@ -15,9 +22,18 @@
 		DE074D2223B9E72100F494D1 /* CalWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE074D2123B9E72100F494D1 /* CalWindowController.swift */; };
 		DE074D2423B9FDB700F494D1 /* CalTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE074D2323B9FDB700F494D1 /* CalTextField.swift */; };
 		DE074D2623BA0BA400F494D1 /* CalImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE074D2523BA0BA400F494D1 /* CalImageView.swift */; };
+		DE074D5023BA415D00F494D1 /* CalCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE074D4E23BA415D00F494D1 /* CalCollectionViewItem.swift */; };
+		DE074D5123BA415D00F494D1 /* CalCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE074D4F23BA415D00F494D1 /* CalCollectionViewItem.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DE047A7C23BADC820009028A /* CalSectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalSectionView.xib; sourceTree = "<group>"; };
+		DE047A7E23BADCB20009028A /* CalSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalSectionView.swift; sourceTree = "<group>"; };
+		DE047A8023BAE2660009028A /* CalTodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTodoItem.swift; sourceTree = "<group>"; };
+		DE047A8223BAE2790009028A /* CalTodoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTodoSection.swift; sourceTree = "<group>"; };
+		DE047A8423BAE2F70009028A /* CalTodoYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTodoYear.swift; sourceTree = "<group>"; };
+		DE047A8823BAE3380009028A /* CalTodoMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTodoMonth.swift; sourceTree = "<group>"; };
+		DE047A8A23BAF0170009028A /* CalTodoDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTodoDay.swift; sourceTree = "<group>"; };
 		DE074D0C23B9E6C200F494D1 /* Calendar2020.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar2020.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE074D0F23B9E6C200F494D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE074D1123B9E6C200F494D1 /* CalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +45,8 @@
 		DE074D2123B9E72100F494D1 /* CalWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalWindowController.swift; sourceTree = "<group>"; };
 		DE074D2323B9FDB700F494D1 /* CalTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalTextField.swift; sourceTree = "<group>"; };
 		DE074D2523BA0BA400F494D1 /* CalImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalImageView.swift; sourceTree = "<group>"; };
+		DE074D4E23BA415D00F494D1 /* CalCollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalCollectionViewItem.swift; sourceTree = "<group>"; };
+		DE074D4F23BA415D00F494D1 /* CalCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalCollectionViewItem.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +60,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE047A8C23BAF9620009028A /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				DE074D1F23B9E71100F494D1 /* CalWindow.swift */,
+				DE074D2123B9E72100F494D1 /* CalWindowController.swift */,
+				DE074D0F23B9E6C200F494D1 /* AppDelegate.swift */,
+				DE074D1323B9E6C300F494D1 /* Assets.xcassets */,
+				DE074D1523B9E6C300F494D1 /* Main.storyboard */,
+				DE074D1923B9E6C300F494D1 /* Calendar2020.entitlements */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		DE074D0323B9E6C200F494D1 = {
 			isa = PBXGroup;
 			children = (
@@ -64,11 +95,8 @@
 				DE074D2923BA0E3F00F494D1 /* Model */,
 				DE074D2823BA0E3A00F494D1 /* View */,
 				DE074D2723BA0E3100F494D1 /* Controller */,
-				DE074D0F23B9E6C200F494D1 /* AppDelegate.swift */,
-				DE074D1323B9E6C300F494D1 /* Assets.xcassets */,
-				DE074D1523B9E6C300F494D1 /* Main.storyboard */,
+				DE047A8C23BAF9620009028A /* Support */,
 				DE074D1823B9E6C300F494D1 /* Info.plist */,
-				DE074D1923B9E6C300F494D1 /* Calendar2020.entitlements */,
 			);
 			path = Calendar2020;
 			sourceTree = "<group>";
@@ -77,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				DE074D1123B9E6C200F494D1 /* CalViewController.swift */,
-				DE074D2123B9E72100F494D1 /* CalWindowController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -85,9 +112,12 @@
 		DE074D2823BA0E3A00F494D1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DE074D1F23B9E71100F494D1 /* CalWindow.swift */,
 				DE074D2523BA0BA400F494D1 /* CalImageView.swift */,
 				DE074D2323B9FDB700F494D1 /* CalTextField.swift */,
+				DE047A7C23BADC820009028A /* CalSectionView.xib */,
+				DE047A7E23BADCB20009028A /* CalSectionView.swift */,
+				DE074D4F23BA415D00F494D1 /* CalCollectionViewItem.xib */,
+				DE074D4E23BA415D00F494D1 /* CalCollectionViewItem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -95,6 +125,11 @@
 		DE074D2923BA0E3F00F494D1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DE047A8023BAE2660009028A /* CalTodoItem.swift */,
+				DE047A8223BAE2790009028A /* CalTodoSection.swift */,
+				DE047A8A23BAF0170009028A /* CalTodoDay.swift */,
+				DE047A8823BAE3380009028A /* CalTodoMonth.swift */,
+				DE047A8423BAE2F70009028A /* CalTodoYear.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,6 +194,8 @@
 			files = (
 				DE074D1423B9E6C300F494D1 /* Assets.xcassets in Resources */,
 				DE074D1723B9E6C300F494D1 /* Main.storyboard in Resources */,
+				DE074D5123BA415D00F494D1 /* CalCollectionViewItem.xib in Resources */,
+				DE047A7D23BADC820009028A /* CalSectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,12 +206,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE047A8323BAE2790009028A /* CalTodoSection.swift in Sources */,
 				DE074D2223B9E72100F494D1 /* CalWindowController.swift in Sources */,
+				DE047A8B23BAF0170009028A /* CalTodoDay.swift in Sources */,
 				DE074D1223B9E6C200F494D1 /* CalViewController.swift in Sources */,
 				DE074D1023B9E6C200F494D1 /* AppDelegate.swift in Sources */,
 				DE074D2623BA0BA400F494D1 /* CalImageView.swift in Sources */,
 				DE074D2023B9E71100F494D1 /* CalWindow.swift in Sources */,
+				DE047A8523BAE2F70009028A /* CalTodoYear.swift in Sources */,
+				DE047A8123BAE2660009028A /* CalTodoItem.swift in Sources */,
+				DE074D5023BA415D00F494D1 /* CalCollectionViewItem.swift in Sources */,
+				DE047A8923BAE3380009028A /* CalTodoMonth.swift in Sources */,
 				DE074D2423B9FDB700F494D1 /* CalTextField.swift in Sources */,
+				DE047A7F23BADCB20009028A /* CalSectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

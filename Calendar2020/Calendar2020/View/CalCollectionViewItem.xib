@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="CalCollectionViewItem" customModule="Calendar2020" customModuleProvider="target">
+            <connections>
+                <outlet property="checkBox" destination="SZd-TF-b88" id="kIw-3A-waD"/>
+                <outlet property="sectionLabel" destination="aA2-Lx-i3r" id="ZkY-c7-89B"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <collectionViewItem id="JkL-uu-7lV" customClass="CalCollectionViewItem" customModule="Calendar2020" customModuleProvider="target"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="28"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aA2-Lx-i3r">
+                    <rect key="frame" x="56" y="5" width="426" height="19"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="todoItem" id="WSg-rH-SJB">
+                        <font key="font" metaFont="system" size="16"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SZd-TF-b88">
+                    <rect key="frame" x="20" y="4" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="4z4-V0-EzE"/>
+                        <constraint firstAttribute="width" constant="20" id="uOj-xd-dl8"/>
+                    </constraints>
+                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="Uncheck" imagePosition="left" state="on" inset="2" id="6yc-pO-OVW">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="SZd-TF-b88" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="4" id="Rsf-fX-eUw"/>
+                <constraint firstItem="aA2-Lx-i3r" firstAttribute="centerY" secondItem="SZd-TF-b88" secondAttribute="centerY" id="a1c-lz-8az"/>
+                <constraint firstItem="SZd-TF-b88" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="hKw-Er-rYb"/>
+                <constraint firstItem="aA2-Lx-i3r" firstAttribute="leading" secondItem="SZd-TF-b88" secondAttribute="trailing" constant="18" id="lCa-mc-BPE"/>
+                <constraint firstAttribute="trailing" secondItem="aA2-Lx-i3r" secondAttribute="trailing" id="rmj-Zt-hse"/>
+                <constraint firstAttribute="bottom" secondItem="SZd-TF-b88" secondAttribute="bottom" constant="4" id="x7W-FA-VDr"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="154"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="Uncheck" width="20" height="20"/>
+    </resources>
+</document>
