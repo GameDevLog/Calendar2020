@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct CalTodoYear {
+struct CalTodoYear: Codable {
     var yearIndex = 2020
     var calTodoMonths = [CalTodoMonth]()
 }

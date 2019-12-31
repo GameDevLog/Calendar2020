@@ -8,6 +8,8 @@
 
 import Foundation
 
-struct CalTodoDay {
+struct CalTodoDay: Codable {
+    var gameName: String?
+    var gameImgae: String?
     var calTodoSection = [CalTodoSection]()
 }

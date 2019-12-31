@@ -8,7 +8,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="CalCollectionViewItem" customModule="Calendar2020" customModuleProvider="target">
             <connections>
                 <outlet property="checkBox" destination="SZd-TF-b88" id="kIw-3A-waD"/>
-                <outlet property="sectionLabel" destination="aA2-Lx-i3r" id="ZkY-c7-89B"/>
+                <outlet property="keyLabel" destination="aA2-Lx-i3r" id="ZkY-c7-89B"/>
+                <outlet property="valueLabel" destination="ZiG-16-s4I" id="y3Z-7M-lX2"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -16,36 +17,68 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="28"/>
+            <rect key="frame" x="0.0" y="0.0" width="480" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aA2-Lx-i3r">
-                    <rect key="frame" x="56" y="5" width="426" height="19"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="todoItem" id="WSg-rH-SJB">
-                        <font key="font" metaFont="system" size="16"/>
-                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </textFieldCell>
-                </textField>
-                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SZd-TF-b88">
-                    <rect key="frame" x="20" y="4" width="20" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="20" id="4z4-V0-EzE"/>
-                        <constraint firstAttribute="width" constant="20" id="uOj-xd-dl8"/>
-                    </constraints>
-                    <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="Uncheck" imagePosition="left" state="on" inset="2" id="6yc-pO-OVW">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
+                <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbn-3X-vKh">
+                    <rect key="frame" x="20" y="0.0" width="460" height="60"/>
+                    <subviews>
+                        <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SZd-TF-b88">
+                            <rect key="frame" x="0.0" y="40" width="20" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="4z4-V0-EzE"/>
+                                <constraint firstAttribute="width" constant="20" id="uOj-xd-dl8"/>
+                            </constraints>
+                            <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="Uncheck" imagePosition="left" state="on" inset="2" id="6yc-pO-OVW">
+                                <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                        <stackView distribution="fillEqually" orientation="horizontal" alignment="centerY" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="42x-78-tvV">
+                            <rect key="frame" x="30" y="41" width="430" height="19"/>
+                            <subviews>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aA2-Lx-i3r">
+                                    <rect key="frame" x="-2" y="0.0" width="219" height="19"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="todoItem" id="WSg-rH-SJB">
+                                        <font key="font" metaFont="system" size="16"/>
+                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZiG-16-s4I">
+                                    <rect key="frame" x="213" y="0.0" width="219" height="19"/>
+                                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="todoItem" id="2Ws-Qb-h24">
+                                        <font key="font" metaFont="system" size="16"/>
+                                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </textFieldCell>
+                                </textField>
+                            </subviews>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                    </subviews>
+                    <visibilityPriorities>
+                        <integer value="1000"/>
+                        <integer value="1000"/>
+                    </visibilityPriorities>
+                    <customSpacing>
+                        <real value="3.4028234663852886e+38"/>
+                        <real value="3.4028234663852886e+38"/>
+                    </customSpacing>
+                </stackView>
             </subviews>
             <constraints>
-                <constraint firstItem="SZd-TF-b88" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="4" id="Rsf-fX-eUw"/>
-                <constraint firstItem="aA2-Lx-i3r" firstAttribute="centerY" secondItem="SZd-TF-b88" secondAttribute="centerY" id="a1c-lz-8az"/>
-                <constraint firstItem="SZd-TF-b88" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" symbolic="YES" id="hKw-Er-rYb"/>
-                <constraint firstItem="aA2-Lx-i3r" firstAttribute="leading" secondItem="SZd-TF-b88" secondAttribute="trailing" constant="18" id="lCa-mc-BPE"/>
-                <constraint firstAttribute="trailing" secondItem="aA2-Lx-i3r" secondAttribute="trailing" id="rmj-Zt-hse"/>
-                <constraint firstAttribute="bottom" secondItem="SZd-TF-b88" secondAttribute="bottom" constant="4" id="x7W-FA-VDr"/>
+                <constraint firstAttribute="trailing" secondItem="kbn-3X-vKh" secondAttribute="trailing" id="IM6-Rm-X3h"/>
+                <constraint firstItem="kbn-3X-vKh" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="Igz-gb-b31"/>
+                <constraint firstItem="kbn-3X-vKh" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="P5O-0b-eyf"/>
+                <constraint firstAttribute="bottom" secondItem="kbn-3X-vKh" secondAttribute="bottom" id="oqs-Uf-BYH"/>
             </constraints>
             <point key="canvasLocation" x="139" y="154"/>
         </customView>

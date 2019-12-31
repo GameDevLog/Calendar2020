@@ -12,7 +12,13 @@ import Cocoa
 class CalViewController: NSViewController {
     @IBOutlet var calImageView: CalImageView!
     @IBOutlet var collectionView: NSCollectionView!
+    @IBOutlet var todayButton: NSButton!
+    @IBOutlet var leadingConstraint: NSLayoutConstraint!
+    @IBOutlet var topConstraint: NSLayoutConstraint!
+    @IBOutlet var gameNameLabel: NSTextField!
+    @IBOutlet var gameImageView: NSImageView!
 
+    let configName = "calendar2020.json"
     let itemName = "CalCollectionViewItem"
     let itemIdentifier = NSUserInterfaceItemIdentifier("CalCollectionViewItem")
 
@@ -22,8 +28,10 @@ class CalViewController: NSViewController {
         super.viewDidLoad()
 
         configureCollectionView()
+//        dummyData()
         fetchData()
 
+        gameNameLabel.stringValue = "RivenTails: Defense"
         calImageView.image = NSImage(named: "2020")
     }
 
@@ -33,19 +41,57 @@ class CalViewController: NSViewController {
         }
     }
 
+    override func viewDidAppear() {
+        super.viewDidAppear()
+
+        layoutToday()
+    }
+
+    func layoutToday() {
+        let todayImageSize = todayButton.bounds.width / 2
+
+        let orignWidth: CGFloat = 595
+        let orignHeight: CGFloat = 842
+        let originCellOffsetX: CGFloat = 31
+        let originCellOffsetY: CGFloat = 89
+        let originCellPaddingX: CGFloat = 22
+        let originCellPaddingY: CGFloat = 64
+
+        let originCelDistanceX: CGFloat = 22
+        let originCelDistanceY: CGFloat = 19
+
+        let curWidth = calImageView.bounds.width
+        let curHeight = calImageView.bounds.height
+        let ratioX = curWidth / orignWidth
+        let ratioY = curHeight / orignHeight
+
+        let curOffsetX: CGFloat = (originCellOffsetX + originCellPaddingX + originCelDistanceX * 3) * ratioX
+        let curOffsetY: CGFloat = (originCellOffsetY + originCellPaddingY + originCelDistanceY * 0) * ratioY
+
+        topConstraint.constant = curOffsetY - todayImageSize
+        leadingConstraint.constant = curOffsetX - todayImageSize
+    }
+
     func fetchData() {
+        let reuslt = readFromFile(fileName: configName)
+        if !reuslt {
+            toastAlert(alertInformation: "读取文件失败")
+        }
+    }
+
+    func dummyData() {
         for _ in 0 ..< 12 {
             var calTodoMonth = CalTodoMonth()
             for _ in 0 ..< 30 {
                 var calTodoDay = CalTodoDay()
-                for _ in 0..<5 {
+                for _ in 0 ..< 5 {
                     var calTodoSection = CalTodoSection()
                     calTodoSection.todoSection = "小武小久成长记"
-                    var todoItem = CalTodoItem(todo: "打扫月卫生", finished: false)
+                    var todoItem = CalTodoItem(todoKey: "打扫卫生", todoValue: "", finished: false)
                     calTodoSection.calTodoItems.append(todoItem)
-                    todoItem = CalTodoItem(todo: "我想要去", finished: true)
+                    todoItem = CalTodoItem(todoKey: "出动玩吧", todoValue: "", finished: false)
                     calTodoSection.calTodoItems.append(todoItem)
-                    todoItem = CalTodoItem(todo: "我还想要去", finished: true)
+                    todoItem = CalTodoItem(todoKey: "乒乓球", todoValue: "", finished: false)
                     calTodoSection.calTodoItems.append(todoItem)
                     calTodoDay.calTodoSection.append(calTodoSection)
                 }
@@ -53,6 +99,74 @@ class CalViewController: NSViewController {
             }
             cal2020.calTodoMonths.append(calTodoMonth)
         }
+        if let jsonData = try? JSONEncoder().encode(cal2020) {
+            if let jsonString = String(data: jsonData, encoding: String.Encoding.utf8) {
+                let result = writeToFile(fileName: configName, writeText: jsonString)
+                if !result {
+                    toastAlert(alertInformation: "文件写入失败")
+                }
+            }
+        }
+    }
+
+    func toastAlert(alertInformation: String) {
+        let alert = NSAlert()
+        alert.messageText = "提示"
+        alert.informativeText = alertInformation
+        alert.helpAnchor = "NSAlert"
+        alert.layout()
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "确定")
+        alert.runModal()
+    }
+
+    func fileExist(path: String) -> Bool {
+        var isDirectory: ObjCBool = false
+        let fm = FileManager.default
+        return (fm.fileExists(atPath: path, isDirectory: &isDirectory))
+    }
+
+    func readFromFile(fileName: String) -> Bool {
+        var readText: String?
+        let desktopURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+
+        let fileURL = desktopURL.appendingPathComponent(fileName)
+
+        if !fileExist(path: fileURL.path) {
+            print("File Does Not Exist...")
+            return false
+        }
+
+        print("File Path: \(fileURL.path)")
+
+        do {
+            readText = try String(contentsOf: fileURL)
+
+            if let jsonData = readText?.data(using: String.Encoding.utf8) {
+                if let calTodoYear = try? JSONDecoder().decode(CalTodoYear.self, from: jsonData) {
+                    cal2020 = calTodoYear
+                    collectionView.reloadData()
+                }
+            }
+        } catch let error as NSError {
+            print("Error: fileURL failed to read: \n\(error)")
+            return false
+        }
+        return true
+    }
+
+    func writeToFile(fileName: String, writeText: String) -> Bool {
+        let configURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+
+        let fileURL = configURL.appendingPathComponent(fileName)
+
+        do {
+            try writeText.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+        } catch let error as NSError {
+            print("Error: fileURL failed to write: \n\(error)")
+            return false
+        }
+        return true
     }
 
     func configureCollectionView() {
@@ -74,6 +188,9 @@ class CalViewController: NSViewController {
 
 extension CalViewController: NSCollectionViewDataSource {
     func numberOfSections(in collectionView: NSCollectionView) -> Int {
+        if cal2020.calTodoMonths.count < 1 {
+            return 0
+        }
         return cal2020.calTodoMonths[0].calTodoDays[0].calTodoSection.count
     }
 
@@ -83,7 +200,7 @@ extension CalViewController: NSCollectionViewDataSource {
 
     func collectionView(_ collectionView: NSCollectionView, viewForSupplementaryElementOfKind kind: NSCollectionView.SupplementaryElementKind, at indexPath: IndexPath) -> NSView {
         let view = collectionView.makeSupplementaryView(ofKind: NSCollectionView.elementKindSectionHeader, withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "CalSectionView"), for: indexPath) as! CalSectionView
-        
+
         let calTodoSection = cal2020.calTodoMonths[0].calTodoDays[0].calTodoSection[indexPath.section]
         view.sectionTitle.stringValue = "\(indexPath.section + 1). \(String(describing: calTodoSection.todoSection))"
 
@@ -93,10 +210,15 @@ extension CalViewController: NSCollectionViewDataSource {
     func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
         let item = collectionView.makeItem(withIdentifier: itemIdentifier, for: indexPath)
         guard let collectionViewItem = item as? CalCollectionViewItem else { return item }
-        
+
         let calTodoItem = cal2020.calTodoMonths[0].calTodoDays[0].calTodoSection[indexPath.section].calTodoItems[indexPath.item]
         collectionViewItem.checkBox.image = calTodoItem.finished ? NSImage(named: "Check") : NSImage(named: "Uncheck")
-        collectionViewItem.sectionLabel.stringValue = "\(String(describing: calTodoItem.todo))"
+        collectionViewItem.keyLabel.stringValue = calTodoItem.todoKey
+        if let todoValue = calTodoItem.todoValue {
+            collectionViewItem.valueLabel.stringValue = todoValue
+        } else {
+            collectionViewItem.valueLabel.stringValue = ""
+        }
 
         return item
     }

@@ -8,7 +8,8 @@
 
 import Cocoa
 
-struct CalTodoItem {
-    var todo = "GameDevLog"
+struct CalTodoItem: Codable {
+    var todoKey = "GameDevLog"
+    var todoValue: String? = nil
     var finished = false
 }

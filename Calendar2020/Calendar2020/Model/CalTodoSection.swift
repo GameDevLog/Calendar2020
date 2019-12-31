@@ -8,7 +8,7 @@
 
 import Cocoa
 
-struct CalTodoSection {
+struct CalTodoSection: Codable {
     var todoSection = "游戏开发日志"
     var calTodoItems = [CalTodoItem]()
 }

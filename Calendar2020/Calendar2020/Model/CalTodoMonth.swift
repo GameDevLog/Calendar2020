@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct CalTodoMonth {
+struct CalTodoMonth: Codable {
     var calTodoDays = [CalTodoDay]()
 }

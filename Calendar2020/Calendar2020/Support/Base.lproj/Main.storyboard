@@ -784,15 +784,15 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hZt-Mu-dBY">
-                                <rect key="frame" x="1276" y="476" width="249" height="56"/>
+                                <rect key="frame" x="1306" y="489" width="189" height="43"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="GameName" id="feq-8K-1C9">
-                                    <font key="font" metaFont="system" size="48"/>
+                                    <font key="font" metaFont="system" size="36"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <imageView translatesAutoresizingMaskIntoConstraints="NO" id="pHc-wr-1qD">
-                                <rect key="frame" x="1200" y="256" width="400" height="200"/>
+                                <rect key="frame" x="1200" y="269" width="400" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="zsr-eR-K9F"/>
                                 </constraints>
@@ -809,6 +809,17 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="href" value="https://live.bilibili.com/4311135"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="62X-zb-cBv">
+                                <rect key="frame" x="10" y="922" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="1Gk-1K-fbE"/>
+                                    <constraint firstAttribute="width" secondItem="62X-zb-cBv" secondAttribute="height" multiplier="1:1" id="gZX-sB-ZLM"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="Today" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="7Rv-r2-iZY">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="scd-50-Lph" firstAttribute="centerX" secondItem="0Lh-2o-08K" secondAttribute="centerX" id="1EX-H1-3JB"/>
@@ -822,6 +833,8 @@
                             <constraint firstItem="3uc-ot-7So" firstAttribute="centerX" secondItem="qvd-mK-ULV" secondAttribute="centerX" id="QWP-8i-hdp"/>
                             <constraint firstAttribute="bottom" secondItem="0Lh-2o-08K" secondAttribute="bottom" constant="40" id="W2m-fp-5Ku"/>
                             <constraint firstItem="3uc-ot-7So" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="WXH-0d-RYD"/>
+                            <constraint firstItem="62X-zb-cBv" firstAttribute="leading" secondItem="jnx-U4-auM" secondAttribute="leading" id="Wgc-Cx-QYy"/>
+                            <constraint firstItem="62X-zb-cBv" firstAttribute="top" secondItem="jnx-U4-auM" secondAttribute="top" id="YT9-2c-VxB"/>
                             <constraint firstItem="0Lh-2o-08K" firstAttribute="leading" secondItem="jnx-U4-auM" secondAttribute="trailing" constant="40" id="YvW-T5-UmF"/>
                             <constraint firstAttribute="trailing" secondItem="qvd-mK-ULV" secondAttribute="trailing" id="Z2A-FN-LA0"/>
                             <constraint firstItem="pHc-wr-1qD" firstAttribute="top" secondItem="hZt-Mu-dBY" secondAttribute="bottom" constant="20" id="buz-st-wHQ"/>
@@ -842,6 +855,11 @@
                     <connections>
                         <outlet property="calImageView" destination="jnx-U4-auM" id="Ccp-zP-oZY"/>
                         <outlet property="collectionView" destination="ZrE-TG-IUr" id="06K-e8-O3L"/>
+                        <outlet property="gameImageView" destination="pHc-wr-1qD" id="qzC-5k-3ZG"/>
+                        <outlet property="gameNameLabel" destination="hZt-Mu-dBY" id="GgB-E6-sCT"/>
+                        <outlet property="leadingConstraint" destination="Wgc-Cx-QYy" id="OUh-Vc-rwR"/>
+                        <outlet property="todayButton" destination="62X-zb-cBv" id="rfd-jd-8GT"/>
+                        <outlet property="topConstraint" destination="YT9-2c-VxB" id="aZW-ZH-i5k"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -854,5 +872,6 @@
         <image name="AIDevLog" width="800" height="400"/>
         <image name="Game" width="711" height="400"/>
         <image name="Rat" width="592" height="592"/>
+        <image name="Today" width="44" height="44"/>
     </resources>
 </document>

@@ -10,5 +10,7 @@ import Cocoa
 
 class CalCollectionViewItem: NSCollectionViewItem {
     @IBOutlet weak var checkBox: NSButton!
-    @IBOutlet weak var sectionLabel: NSTextField!
+    @IBOutlet weak var keyLabel: NSTextField!
+    @IBOutlet weak var valueLabel: NSTextField!
+    
 }
