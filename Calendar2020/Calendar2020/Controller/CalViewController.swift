@@ -218,8 +218,8 @@ class CalViewController: NSViewController {
         let flowLayout = NSCollectionViewFlowLayout()
         flowLayout.itemSize = NSSize(width: collectionView.bounds.size.width, height: 28)
         flowLayout.sectionInset = NSEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        flowLayout.minimumInteritemSpacing = 4
-        flowLayout.minimumLineSpacing = 4
+        flowLayout.minimumInteritemSpacing = 8
+        flowLayout.minimumLineSpacing = 8
         collectionView.collectionViewLayout = flowLayout
         view.wantsLayer = true
         collectionView.layer?.backgroundColor = NSColor.black.cgColor

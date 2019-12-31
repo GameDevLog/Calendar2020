@@ -140,7 +140,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jnx-U4-auM" secondAttribute="height" multiplier="595:842" id="23T-NL-OQW"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" image="2020" id="ZeK-tY-E4L"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="axesIndependently" image="2020" id="ZeK-tY-E4L"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="l01-Uh-gcA" customClass="CalTextField" customModule="Calendar2020" customModuleProvider="target">
                                 <rect key="frame" x="188" y="40" width="303" height="28"/>
@@ -282,7 +282,7 @@
         <image name="2020" width="595" height="842"/>
         <image name="AIDevLog" width="800" height="400"/>
         <image name="Game" width="711" height="400"/>
-        <image name="Rat" width="592" height="592"/>
+        <image name="Rat" width="545" height="592"/>
         <image name="Today" width="44" height="44"/>
     </resources>
 </document>
