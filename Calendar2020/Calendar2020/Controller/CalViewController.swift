@@ -32,6 +32,13 @@ class CalViewController: NSViewController {
         fetchData()
 
         gameNameLabel.stringValue = "RivenTails: Defense"
+
+        DistributedNotificationCenter.default().addObserver(
+            self, selector: #selector(darkModeChanged(noti:)), name: NSNotification.Name(rawValue: "AppleInterfaceThemeChangedNotification"), object: nil)
+    }
+
+    @objc func darkModeChanged(noti: NSNotification) {
+        collectionView.reloadData()
         calImageView.image = NSImage(named: "2020")
     }
 
@@ -45,6 +52,41 @@ class CalViewController: NSViewController {
         super.viewDidAppear()
 
         layoutToday()
+    }
+
+    @IBAction func saveImage(_ sender: Any) {
+        saveNSViewToImage(imageName: "2020-01-01.jpg")
+    }
+
+    func saveNSViewToImage(imageName: String) {
+        if let data = self.view.image().tiffRepresentation {
+            let imageRep = NSBitmapImageRep(data: data)
+            let fileType = imageName.contains("png") ? NSBitmapImageRep.FileType.png : NSBitmapImageRep.FileType.jpeg
+            let imageData = imageRep?.representation(using: fileType, properties: [:])
+            let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+
+            let fileURL = documentDirectory.appendingPathComponent(imageName)
+            do {
+                try imageData?.write(to: fileURL)
+            } catch let error as NSError {
+                print("Error: fileURL failed to read: \n\(error)")
+            }
+        }
+    }
+
+    func saveLayerToImage(imageName: String) {
+        if let data = self.view.layer?.image().tiffRepresentation {
+            let imageRep = NSBitmapImageRep(data: data)
+            let imageData = imageRep?.representation(using: .png, properties: [:])
+            let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+
+            let fileURL = documentDirectory.appendingPathComponent(imageName)
+            do {
+                try imageData?.write(to: fileURL)
+            } catch let error as NSError {
+                print("Error: fileURL failed to read: \n\(error)")
+            }
+        }
     }
 
     func layoutToday() {
@@ -128,9 +170,9 @@ class CalViewController: NSViewController {
 
     func readFromFile(fileName: String) -> Bool {
         var readText: String?
-        let desktopURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let documentDirectory = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
 
-        let fileURL = desktopURL.appendingPathComponent(fileName)
+        let fileURL = documentDirectory.appendingPathComponent(fileName)
 
         if !fileExist(path: fileURL.path) {
             print("File Does Not Exist...")

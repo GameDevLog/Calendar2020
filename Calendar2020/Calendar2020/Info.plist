@@ -36,5 +36,7 @@
 	<false/>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
+	<key>Privacy - Photo Library Usage Description</key>
+	<string>Calendar want to save current screen to disk.</string>
 </dict>
 </plist>

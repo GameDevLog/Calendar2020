@@ -16,11 +16,19 @@ class CalWindow: NSWindow {
         level = NSWindow.Level(rawValue: NSWindow.Level.RawValue(CGWindowLevelForKey(CGWindowLevelKey.normalWindow) - 1))
 
         collectionBehavior = NSWindow.CollectionBehavior(rawValue: NSWindow.CollectionBehavior.RawValue(
-                UInt8(NSWindow.CollectionBehavior.canJoinAllSpaces.rawValue)
+            UInt8(NSWindow.CollectionBehavior.canJoinAllSpaces.rawValue)
                 | UInt8(NSWindow.CollectionBehavior.stationary.rawValue)
                 | UInt8(NSWindow.CollectionBehavior.ignoresCycle.rawValue)))
 
         backgroundColor = NSColor(named: "Background")
         isOpaque = false
+    }
+
+    override var canBecomeMain: Bool {
+        return true
+    }
+
+    override var canBecomeKey: Bool {
+        return true
     }
 }
